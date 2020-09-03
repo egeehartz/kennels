@@ -12,5 +12,10 @@ export const Kennel = () => (
         <LocationProvider>
             <LocationList />
         </LocationProvider>
+
     </>
 )
+/* <h2>Animals</h2>
+ <AnimalProvider>
+     <AnimalList />
+ </AnimalProvider> */
