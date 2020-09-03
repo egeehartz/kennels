@@ -1,6 +1,8 @@
 import React from "react"
 import { LocationList } from "./location/LocationList"
 import { LocationProvider } from "./location/LocationProvider"
+import {AnimalProvider} from "./animal/AnimalProvider"
+import {AnimalList} from "./animal/AnimalList"
 import "./Kennel.css"
 
 export const Kennel = () => (
@@ -12,10 +14,11 @@ export const Kennel = () => (
         <LocationProvider>
             <LocationList />
         </LocationProvider>
+        <h2>Animals</h2>
+        <AnimalProvider>
+            <AnimalList />
+        </AnimalProvider> 
 
     </>
+        
 )
-/* <h2>Animals</h2>
- <AnimalProvider>
-     <AnimalList />
- </AnimalProvider> */
