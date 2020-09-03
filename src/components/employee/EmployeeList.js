@@ -27,7 +27,7 @@ export const EmployeeList = () => {
     }, [employees])
 
     return (
-        <div className="Employees">
+        <div className="employees">
         {
             employees.map(emp => <Employee key={emp.id} employee={emp} />)
         }
