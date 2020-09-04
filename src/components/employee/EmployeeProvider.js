@@ -12,14 +12,14 @@ export const EmployeeProvider = (props) => {
 
     //pretty familiar
     const getEmployees = () => {
-        return fetch("http://localhost:8088/Employees")
+        return fetch("http://localhost:8088/employees")
             .then(res => res.json())
             .then(setEmployees)
     }
 
     //C of CRUD
     const addEmployee = Employee => {
-        return fetch("http://localhost:8088/Employees", {
+        return fetch("http://localhost:8088/employees", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
