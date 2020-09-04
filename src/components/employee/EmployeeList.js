@@ -1,11 +1,15 @@
 import React, { useContext, useEffect } from "react"
 import { EmployeeContext } from "./EmployeeProvider"
+import { LocationContext } from "../location/LocationProvider"
+import { AnimalContext } from "../animal/AnimalProvider"
 import { Employee } from "./Employee"
 import "./Employee.css"
 
-export const EmployeeList = () => {
+export const EmployeeList = (props) => {
     // This state changes when `getEmployees()` is invoked below
     const { employees, getEmployees } = useContext(EmployeeContext)
+    const { locations, getLocations } = useContext(LocationContext)
+    const { animals, getAnimals } = useContext(AnimalContext)
 
     /*
         What's the effect this is reponding to? Component was
@@ -13,24 +17,28 @@ export const EmployeeList = () => {
         then gets the data, then re-renders.
     */
     useEffect(() => {
-        console.log("EmployeeList: Initial render before data")
         getEmployees()
+        getLocations()
+        getAnimals()
     }, [])
-
-    /*
-        This effect is solely for learning purposes. The effect
-        it is responding to is that the Employee state changed.
-    */
-    useEffect(() => {
-        console.log("EmployeeList: Employee state changed")
-        console.log(employees)
-    }, [employees])
 
     return (
         <div className="employees">
-        {
-            employees.map(emp => <Employee key={emp.id} employee={emp} />)
-        }
+            <h1>Employees</h1>
+            <button onClick={() => props.history.push("/employees/create")}>
+                Add Employee
+            </button>
+            <article className="employeeList">
+                {
+                    employees.map(employee => {
+                        const clinic = locations.find(l => l.id === employee.locationId) || {}
+
+                        return <Employee key={employee.id} 
+                        employee={employee}
+                        location={clinic} />
+                    })
+                }
+            </article>
         </div>
     )
 }

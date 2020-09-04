@@ -21,8 +21,8 @@ export const AnimalList = () => {
         <div className="animals">
         {
             animals.map(mappedAnimal => {
-                const owner = customers.find(c => c.id === mappedAnimal.customerId)
-                const clinic = locations.find(l => l.id === mappedAnimal.locationId)
+                const owner = customers.find(c => c.id === mappedAnimal.customerId) || {}
+                const clinic = locations.find(l => l.id === mappedAnimal.locationId) || {}
 
                 return <Animal key={mappedAnimal.id} 
                 animal={mappedAnimal}
