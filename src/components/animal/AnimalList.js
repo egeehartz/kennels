@@ -19,6 +19,10 @@ export const AnimalList = () => {
 
     return (
         <div className="animals">
+            <h1>Customers</h1>
+            <button onClick={() => props.history.push("/customers/create")}>
+                Make An Appointment
+            </button>
         {
             animals.map(mappedAnimal => {
                 const owner = customers.find(c => c.id === mappedAnimal.customerId) || {}
