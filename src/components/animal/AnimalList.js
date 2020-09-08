@@ -5,7 +5,7 @@ import { CustomerContext } from "../customer/CustomerProvider"
 import {Animal} from "./Animal"
 import "./Animal.css"
 
-export const AnimalList = () => {
+export const AnimalList = (props) => {
     // This state changes when `getAnimals()` is invoked below
     const { animals, getAnimals } = useContext(AnimalContext)
     const { locations, getLocations } = useContext(LocationContext)
@@ -19,8 +19,8 @@ export const AnimalList = () => {
 
     return (
         <div className="animals">
-            <h1>Customers</h1>
-            <button onClick={() => props.history.push("/customers/create")}>
+            <h1>Animals</h1>
+            <button onClick={() => props.history.push("/animals/create")}>
                 Make An Appointment
             </button>
         {

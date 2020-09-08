@@ -2,24 +2,30 @@
   "animals": [
     {
       "id": 1,
-      "name": "Doodles",
+      "animalName": "Doodles",
       "breed": "Poodle",
       "customerId": 1,
       "locationId": 2
     },
     {
       "id": 2,
-      "name": "Tiger",
+      "animalName": "Tiger",
       "breed": "Basset Hound",
       "customerId": 2,
       "locationId": 1
     },
     {
       "id": 3,
-      "name": "Scout",
+      "animalName": "Scout",
       "breed": "York Terrier",
       "customerId": 3,
       "locationId": 2
+    },
+    {
+      "animalName": "Spot",
+      "locationId": 1,
+      "customerId": 4,
+      "id": 4
     }
   ],
   "customers": [
