@@ -30,9 +30,14 @@ export const ApplicationViews = (props) => {
                 </LocationProvider>
             </AnimalProvider>
             <CustomerProvider>
-                <Route path="/customers">
-                    <CustomerList />
-                </Route>
+                <AnimalProvider>
+                    <Route exact path="/customers" render={
+                        props => <CustomerList {...props} />
+                    } />
+                    <Route exact path="/customers/create" render={
+                        props => <CustomerForm {...props}/>    
+                    } />
+                </AnimalProvider>
             </CustomerProvider>
             <EmployeeProvider>
                 <LocationProvider>
