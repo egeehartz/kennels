@@ -37,6 +37,12 @@
       "id": 3,
       "name": "Jenna Kaye",
       "address": "7046 Chestnut Ct"
+    },
+    {
+      "email": "emily@emily.com",
+      "password": "123",
+      "name": "Emily H",
+      "id": 4
     }
   ],
   "employees": [
