@@ -7,19 +7,27 @@ import {EmployeeProvider} from "./employee/EmployeeProvider"
 import { LocationList } from "./location/LocationList"
 import { AnimalList } from "./animal/AnimalList"
 import {CustomerList} from "./customer/CustomerList"
-import {EmployeeList} from "./employee/EmployeeList"
+import {EmployeeDetail} from "./employee/EmployeeDetail"
 import {EmployeeForm} from "./employee/EmployeeForm"
 import {AnimalForm} from "./animal/AnimalForm"
-
+import {EmployeeList} from "./employee/EmployeeList"
+import {LocationDetail} from "./location/LocationDetail"
 
 export const ApplicationViews = (props) => {
     return (
         <>
             <LocationProvider>
-                {/* Render the location list when http://localhost:3000/ */}
-                <Route exact path="/">
-                    <LocationList />
-                </Route>
+                <EmployeeProvider>
+                    <AnimalProvider>
+                        {/* Render the location list when http://localhost:3000/ */}
+                        <Route exact path="/">
+                            <LocationList />
+                        </Route>
+                        <Route path="/locations/:locationId(\d+)" render={
+                            props => <LocationDetail {...props} />
+                            } />
+                    </AnimalProvider>
+                </EmployeeProvider>
             </LocationProvider>
             <AnimalProvider>
                 <LocationProvider>
@@ -41,12 +49,16 @@ export const ApplicationViews = (props) => {
             <EmployeeProvider>
                 <LocationProvider>
                     <AnimalProvider>
-                <Route exact path="/employees" render={
-                    props => <EmployeeList {...props} />
-                } />
-                <Route exact path="/employees/create" render={
-                    props => <EmployeeForm {...props}/>    
-                } />
+                        <Route path="/employees/create" render={
+                            props => <EmployeeForm {...props} />
+                            } />
+                            <Route path="/employees" render={
+                            props => <EmployeeList {...props} />
+                            } />
+                        {/* New route for showing employee details */}
+                        <Route path="/employees/:employeeId(\d+)" render={
+                            props => <EmployeeDetail {...props} />
+                            } />
                     </AnimalProvider>
                 </LocationProvider>
             </EmployeeProvider>

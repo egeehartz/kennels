@@ -62,7 +62,7 @@ export const EmployeeForm = (props) => {
                         <option value="0">Select an animal</option>
                         {animals.map(e => (
                             <option key={e.id} value={e.id}>
-                                {e.name}
+                                {e.animalName}
                             </option>
                         ))}
                     </select>

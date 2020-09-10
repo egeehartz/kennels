@@ -55,7 +55,8 @@
     {
       "id": 1,
       "name": "Jeremy Bakker",
-      "locationId": 1
+      "locationId": 1,
+      "animalId":3
     },
     {
       "name": "Esther",
