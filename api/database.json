@@ -1,32 +1,20 @@
 {
   "animals": [
     {
-      "id": 1,
-      "animalName": "Doodles",
-      "breed": "Poodle",
-      "customerId": 1,
-      "locationId": 2
-    },
-    {
-      "id": 2,
-      "animalName": "Tiger",
-      "breed": "Basset Hound",
-      "customerId": 2,
-      "locationId": 1
-    },
-    {
       "id": 3,
       "animalName": "Scout",
-      "breed": "York Terrier",
-      "customerId": 3,
-      "locationId": 2
+      "breed": "Black Lab",
+      "locationId": 2,
+      "treatment": "Shampoos",
+      "customerId": 3
     },
     {
-      "animalName": "Spot",
+      "id": 5,
+      "animalName": "Shego",
       "breed": "Corgi",
-      "locationId": 1,
-      "customerId": 4,
-      "id": 4
+      "locationId": 2,
+      "treatment": "Shampoos",
+      "customerId": 4
     }
   ],
   "customers": [
@@ -54,21 +42,21 @@
   ],
   "employees": [
     {
-      "id": 1,
-      "name": "Jeremy Bakker",
+      "name": "Emily",
       "locationId": 1,
-      "animalId":3
-    },
-    {
-      "name": "Esther",
-      "locationId": 2,
-      "animalId": 1,
-      "id": 2
+      "animalId": 5,
+      "id": 1
     },
     {
       "name": "Sam",
+      "locationId": 2,
+      "animalId": 3,
+      "id": 2
+    },
+    {
+      "name": "Esther",
       "locationId": 1,
-      "animalId": 2,
+      "animalId": "5",
       "id": 3
     }
   ],

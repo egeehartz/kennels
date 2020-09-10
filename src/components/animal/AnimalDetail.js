@@ -21,7 +21,7 @@ export const AnimalDetails = (props) => {
             <div className="animal__owner">Customer: {animal.customer.name}</div>
             <button onClick={
                 () => {
-                    releaseAnimal(animal)
+                    releaseAnimal(parseInt(animal.id))
                         .then(() => {
                             props.history.push("/animals")
                         })
