@@ -1,41 +1,29 @@
 import React, { useContext, useEffect } from "react"
 import { EmployeeContext } from "./EmployeeProvider"
-import { LocationContext } from "../location/LocationProvider"
-import { AnimalContext } from "../animal/AnimalProvider"
-import { Employee } from "./Employee"
+import { Link } from "react-router-dom"
 import "./Employee.css"
 
-export const EmployeeList = (props) => {
-    // This state changes when `getEmployees()` is invoked below
+export const EmployeeList = props => {
     const { employees, getEmployees } = useContext(EmployeeContext)
-    const { locations, getLocations } = useContext(LocationContext)
-    const { animals, getAnimals } = useContext(AnimalContext)
 
-    /*
-        What's the effect this is reponding to? Component was
-        "mounted" to the DOM. React renders blank HTML first,
-        then gets the data, then re-renders.
-    */
     useEffect(() => {
         getEmployees()
-        getLocations()
-        getAnimals()
     }, [])
 
     return (
-        <div className="employees">
+        <div className="employee">
             <h1>Employees</h1>
+
             <button onClick={() => props.history.push("/employees/create")}>
                 Add Employee
             </button>
-            <article className="employeeList">
+
+            <article className="employees">
                 {
                     employees.map(employee => {
-                        const clinic = locations.find(l => l.id === employee.locationId) || {}
-
-                        return <Employee key={employee.id} 
-                        employee={employee}
-                        location={clinic} />
+                        return <Link key={employee.id} to={`/employees/${employee.id}`}>
+                            <h3>{employee.name}</h3>
+                        </Link>
                     })
                 }
             </article>

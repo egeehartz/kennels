@@ -1,25 +1,20 @@
 {
   "animals": [
     {
-      "id": 1,
-      "name": "Doodles",
-      "breed": "Poodle",
-      "customerId": 1,
-      "locationId": 2
-    },
-    {
-      "id": 2,
-      "name": "Tiger",
-      "breed": "Basset Hound",
-      "customerId": 2,
-      "locationId": 1
-    },
-    {
       "id": 3,
-      "name": "Scout",
-      "breed": "York Terrier",
-      "customerId": 3,
-      "locationId": 2
+      "animalName": "Scout",
+      "breed": "Black Lab",
+      "locationId": 2,
+      "treatment": "Shampoos",
+      "customerId": 3
+    },
+    {
+      "id": 5,
+      "animalName": "Shego",
+      "breed": "Corgi",
+      "locationId": 2,
+      "treatment": "Shampoos",
+      "customerId": 4
     }
   ],
   "customers": [
@@ -37,24 +32,31 @@
       "id": 3,
       "name": "Jenna Kaye",
       "address": "7046 Chestnut Ct"
+    },
+    {
+      "email": "emily@emily.com",
+      "password": "123",
+      "name": "Emily H",
+      "id": 4
     }
   ],
   "employees": [
     {
-      "id": 1,
-      "name": "Jeremy Bakker",
-      "locationId": 1
-    },
-    {
-      "name": "Esther",
-      "locationId": 2,
-      "animalId": 1,
-      "id": 2
+      "name": "Emily",
+      "locationId": 1,
+      "animalId": 5,
+      "id": 1
     },
     {
       "name": "Sam",
+      "locationId": 2,
+      "animalId": 3,
+      "id": 2
+    },
+    {
+      "name": "Esther",
       "locationId": 1,
-      "animalId": 2,
+      "animalId": "5",
       "id": 3
     }
   ],

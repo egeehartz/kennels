@@ -19,7 +19,7 @@ export const EmployeeForm = (props) => {
 
     const constructNewEmployee = () => {
         const locationId = parseInt(location.current.value)
-        const animalId = parseInt(animal.current.value)
+        const animalId = animal.current.value
 
         if (locationId === 0) {
             window.alert("Please select a location")
@@ -62,7 +62,7 @@ export const EmployeeForm = (props) => {
                         <option value="0">Select an animal</option>
                         {animals.map(e => (
                             <option key={e.id} value={e.id}>
-                                {e.name}
+                                {e.animalName}
                             </option>
                         ))}
                     </select>
