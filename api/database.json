@@ -23,6 +23,7 @@
     },
     {
       "animalName": "Spot",
+      "breed": "Corgi",
       "locationId": 1,
       "customerId": 4,
       "id": 4
