@@ -13,7 +13,7 @@ export const LocationDetail = (props) => {
             <div>
                 <h4>Current Residents</h4>
                 {
-                    props.location.state.chosenLocation.animals.map(a => a.name).join(", ")
+                    props.location.state.chosenLocation.animals.map(a => a.animalName).join(", ")
                 }
             </div>
         </section>
