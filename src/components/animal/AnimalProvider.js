@@ -9,7 +9,7 @@ export const AnimalContext = React.createContext()
 //Instead of many functions, one big function is used
 export const AnimalProvider = (props) => {
     const [animals, setAnimals] = useState([])
-    const [ searchTerms, setTerms ] = useState("")
+    const [ searchTerms, setSearch ] = useState("")
 
     //pretty familiar
     const getAnimals = () => {
@@ -45,7 +45,7 @@ export const AnimalProvider = (props) => {
     //THE return statement of the function
     return (
         <AnimalContext.Provider value={{
-            animals, addAnimal, getAnimals, getAnimalById
+            animals, searchTerms, addAnimal, getAnimals, getAnimalById, setSearch
         }}>
             {props.children}
         </AnimalContext.Provider>
